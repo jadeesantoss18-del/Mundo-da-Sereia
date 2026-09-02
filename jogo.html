@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo da Sereia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="jogo-body">
+
+<header>
+    <h1>🧜‍♀️ Jogo da Sereia</h1>
+
+    <nav>
+        <a href="jogador.html">👤 Jogadores</a>
+        <a href="jogo.html">🎮 Jogar</a>
+    </nav>
+</header>
+
+<div class="info">
+    Jogador: <b id="jogador">Visitante</b>
+    Pontos: <b id="pontos">0</b>
+</div>
+
+<div id="jogo">
+
+    <!-- PEIXES -->
+    <div class="peixe">🐟</div>
+    <div class="peixe peixe2">🐠</div>
+
+    <!-- BOLHAS -->
+    <div class="bolha">🫧</div>
+    <div class="bolha bolha2">🫧</div>
+
+    <!-- SEREIA -->
+    <div id="sereia">🧜‍♀️</div>
+
+    <!-- ALGA -->
+    <div id="alga">🌿</div>
+
+    <!-- AREIA -->
+    <div class="areia">🐚 🪸 🐚 🪸 🐚</div>
+
+    <!-- INÍCIO -->
+    <div id="inicio">
+        <h2>🧜‍♀️ Aventura da Sereia</h2>
+        <p>Pule as algas e consiga muitos pontos!</p>
+
+        <button onclick="comecar()">▶️ COMEÇAR</button>
+
+        <p>Depois de começar, use ESPAÇO para pular.</p>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="fim">
+        <h2>💥 Game Over!</h2>
+
+        <p>Pontos: <b id="final">0</b></p>
+
+        <button onclick="comecar()">🔄 JOGAR NOVAMENTE</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
