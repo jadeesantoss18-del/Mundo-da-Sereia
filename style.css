@@ -1,71 +1,138 @@
+/* ===== BASE PIXEL ===== */
+
 * {
     box-sizing: border-box;
+    image-rendering: pixelated;
+}
+
+:root {
+    --roxo: #603bb3;
+    --roxo-claro: #8b63d1;
+    --roxo-escuro: #3d2278;
+    --tinta: #1a1a2e;
+    --agua-clara: #b8f3ff;
+    --sombra: 6px 6px 0 rgba(26, 26, 46, .35);
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #b8f3ff;
+    font-family: "Press Start 2P", "Courier New", monospace;
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--tinta);
     text-align: center;
+    background:
+        conic-gradient(#a6e8f7 25%, transparent 0 50%, #a6e8f7 0 75%, transparent 0)
+        0 0 / 32px 32px,
+        var(--agua-clara);
 }
 
-/* CABEÇALHO */
+/* ===== SPRITES ===== */
+
+[data-sprite] {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* ===== CABEÇALHO ===== */
 
 header {
-    background: #603bb3;
+    background: var(--roxo);
     color: white;
-    padding: 15px;
+    padding: 18px 15px 14px;
+    border-bottom: 8px solid var(--roxo-escuro);
 }
 
 header h1 {
-    margin: 5px 0 15px;
+    margin: 5px 0 18px;
+    font-size: 20px;
+    font-weight: normal;
+    text-shadow: 3px 3px 0 var(--roxo-escuro);
 }
 
 header a {
     display: inline-block;
     color: white;
     text-decoration: none;
-    background: #8b63d1;
-    padding: 9px 18px;
+    background: var(--roxo-claro);
+    padding: 10px 16px;
     margin: 4px;
-    border-radius: 10px;
+    font-size: 11px;
+    border: 4px solid var(--roxo-escuro);
+    box-shadow: 4px 4px 0 var(--roxo-escuro);
 }
 
 header a:hover {
-    background: #7047bd;
+    background: #a37de6;
 }
 
-/* CRUD */
+header a:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* ===== CRUD ===== */
 
 .crud {
     background: white;
     width: 90%;
-    max-width: 700px;
+    max-width: 760px;
     margin: 30px auto;
     padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px #0002;
+    border: 6px solid var(--tinta);
+    box-shadow: var(--sombra);
+}
+
+.crud h2 {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 10px 0 18px;
 }
 
 input {
-    padding: 11px;
+    padding: 12px;
     margin: 5px;
-    border: 2px solid #9b7bd3;
-    border-radius: 8px;
+    font-family: inherit;
+    font-size: 10px;
+    border: 4px solid var(--roxo);
+    background: #f4efff;
+    color: var(--tinta);
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--tinta);
+    background: #fff;
 }
 
 button {
-    padding: 11px 20px;
-    border: 0;
-    border-radius: 8px;
-    background: #603bb3;
+    padding: 12px 18px;
+    font-family: inherit;
+    font-size: 10px;
+    border: 4px solid var(--roxo-escuro);
+    background: var(--roxo);
     color: white;
     cursor: pointer;
-    font-weight: bold;
+    box-shadow: 4px 4px 0 var(--roxo-escuro);
 }
 
 button:hover {
     background: #7b55c5;
+}
+
+button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+.tabela-rolagem {
+    overflow-x: auto;
 }
 
 table {
@@ -77,29 +144,48 @@ table {
 th,
 td {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 4px solid var(--tinta);
+    font-size: 10px;
 }
 
 th {
-    background: #603bb3;
+    background: var(--roxo);
     color: white;
+    font-weight: normal;
 }
 
-/* JOGO */
+td button {
+    padding: 8px 10px;
+    margin: 2px;
+    font-size: 9px;
+    box-shadow: 3px 3px 0 var(--roxo-escuro);
+}
+
+/* ===== JOGO ===== */
 
 .jogo-body {
-    background: #06345c;
+    background:
+        conic-gradient(#082a4a 25%, transparent 0 50%, #082a4a 0 75%, transparent 0)
+        0 0 / 32px 32px,
+        #06345c;
 }
 
 .info {
     background: white;
-    padding: 12px;
-    margin: 15px auto;
+    padding: 14px;
+    margin: 20px auto;
     width: 90%;
-    max-width: 900px;
-    border-radius: 10px;
+    max-width: 1000px;
+    border: 6px solid var(--tinta);
+    box-shadow: var(--sombra);
 }
 
+.info b {
+    color: var(--roxo);
+    margin: 0 18px 0 6px;
+}
+
+/* CÉU */
 #jogo {
     width: 90%;
     max-width: 1000px;
@@ -107,28 +193,33 @@ th {
     margin: auto;
     position: relative;
     overflow: hidden;
-    border: 5px solid #7eeaff;
-    border-radius: 15px;
-    background: linear-gradient(#28c6ed, #07578c);
+    border: 8px solid #7eeaff;
+    outline: 6px solid var(--tinta);
+    background: linear-gradient(
+        #28c6ed 0 20%,
+        #20b0e0 20% 40%,
+        #1a96cf 40% 60%,
+        #1378b3 60% 80%,
+        #0b5a94 80% 100%
+    );
 }
 
-/* SEREIA */
+/* ===== SEREIA ===== */
 
 #sereia {
     position: absolute;
     left: 100px;
-    bottom: 70px;
-    font-size: 65px;
+    bottom: 64px;
     z-index: 5;
 }
 
 .pular {
-    animation: pulo .7s ease;
+    animation: pulo .7s steps(12, end);
 }
 
 @keyframes pulo {
     0%, 100% {
-        bottom: 70px;
+        bottom: 64px;
     }
 
     50% {
@@ -136,17 +227,16 @@ th {
     }
 }
 
-/* ALGA */
+/* ===== ALGA ===== */
 
 #alga {
     position: absolute;
     right: -80px;
-    bottom: 65px;
-    font-size: 70px;
+    bottom: 64px;
     z-index: 5;
 }
 
-/* Só começa quando o jogo inicia */
+/* INICIAR */
 .alga-andando {
     animation: alga 2s linear infinite;
 }
@@ -161,16 +251,14 @@ th {
     }
 }
 
-/* PEIXES */
+/* ===== PEIXES ===== */
 
 .peixe {
     position: absolute;
     top: 80px;
     left: -60px;
-    font-size: 40px;
     z-index: 2;
     animation: peixe 10s linear infinite;
-    transform: scaleX(-1);
 }
 
 .peixe2 {
@@ -188,14 +276,14 @@ th {
     }
 }
 
-/* BOLHAS */
+/* ===== BOLHAS ===== */
 
 .bolha {
     position: absolute;
     bottom: 30px;
     left: 30%;
-    font-size: 30px;
-    animation: bolha 5s linear infinite;
+    z-index: 2;
+    animation: bolha 5s steps(40, end) infinite;
 }
 
 .bolha2 {
@@ -213,41 +301,61 @@ th {
     }
 }
 
-/* AREIA */
+/* ===== AREIA ===== */
 
 .areia {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 65px;
-    background: #e8c36b;
-    padding-top: 20px;
-    font-size: 25px;
+    height: 64px;
     z-index: 4;
+    background:
+        conic-gradient(#d9b25a 25%, transparent 0 50%, #d9b25a 0 75%, transparent 0)
+        0 0 / 16px 16px,
+        #e8c36b;
+    border-top: 8px solid #b88a33;
 }
 
-/* TELAS */
+.deco {
+    position: absolute;
+    bottom: 8px;
+}
+
+/* ===== TELAS ===== */
 
 #inicio,
 #fim {
     position: absolute;
     inset: 0;
-    background: rgba(0, 20, 50, .8);
+    background: rgba(0, 20, 50, .85);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     z-index: 10;
+}
+
+#inicio h2,
+#fim h2 {
+    font-size: 20px;
+    font-weight: normal;
+    text-shadow: 3px 3px 0 var(--roxo);
 }
 
 #inicio button,
 #fim button {
-    font-size: 17px;
-    padding: 13px 25px;
+    font-size: 13px;
+    padding: 16px 26px;
+    margin: 12px 0;
 }
 
 #fim {
     display: none;
+}
+
+#fim h2 {
+    color: #ff6f61;
 }
