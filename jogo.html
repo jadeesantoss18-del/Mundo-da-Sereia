@@ -2,14 +2,21 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jogo da Sereia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="jogo-body">
 
 <header>
-    <h1>🧜‍♀️ Jogo da Sereia</h1>
+    <h1>
+        <span class="logo" data-sprite="sereia" data-scale="2"></span>
+        Jogo da Sereia
+    </h1>
 
     <nav>
         <a href="index.html">Jogadores</a>
@@ -25,39 +32,45 @@
 <div id="jogo">
 
     <!-- PEIXES -->
-    <div class="peixe">🐟</div>
-    <div class="peixe peixe2">🐠</div>
+    <div class="peixe" data-sprite="peixe" data-scale="4"></div>
+    <div class="peixe peixe2" data-sprite="peixe" data-scale="3"></div>
 
     <!-- BOLHAS -->
-    <div class="bolha">🫧</div>
-    <div class="bolha bolha2">🫧</div>
+    <div class="bolha" data-sprite="bolha" data-scale="4"></div>
+    <div class="bolha bolha2" data-sprite="bolha" data-scale="3"></div>
 
     <!-- SEREIA -->
-    <div id="sereia">🧜‍♀️</div>
+    <div id="sereia" data-sprite="sereia" data-scale="3"></div>
 
     <!-- ALGA -->
-    <div id="alga">🌿</div>
+    <div id="alga" data-sprite="alga" data-scale="4"></div>
 
     <!-- AREIA -->
-    <div class="areia">🐚 🪸 🐚 🪸 🐚</div>
+    <div class="areia">
+        <div class="deco" data-sprite="concha" data-scale="4" style="left: 8%"></div>
+        <div class="deco" data-sprite="coral" data-scale="4" style="left: 24%"></div>
+        <div class="deco" data-sprite="concha" data-scale="3" style="left: 46%"></div>
+        <div class="deco" data-sprite="coral" data-scale="3" style="left: 66%"></div>
+        <div class="deco" data-sprite="concha" data-scale="4" style="left: 86%"></div>
+    </div>
 
     <!-- INÍCIO -->
     <div id="inicio">
-        <h2>🧜‍♀️ Aventura da Sereia</h2>
+        <h2>Aventura da Sereia</h2>
         <p>Pule as algas e consiga muitos pontos!</p>
 
-        <button onclick="comecar()">▶️ COMEÇAR</button>
+        <button onclick="comecar()">&gt; COMEÇAR</button>
 
         <p>Depois de começar, use ESPAÇO para pular.</p>
     </div>
 
     <!-- GAME OVER -->
     <div id="fim">
-        <h2>💥 Game Over!</h2>
+        <h2>Game Over!</h2>
 
         <p>Pontos: <b id="final">0</b></p>
 
-        <button onclick="comecar()">🔄 JOGAR NOVAMENTE</button>
+        <button onclick="comecar()">JOGAR DE NOVO</button>
     </div>
 
 </div>
