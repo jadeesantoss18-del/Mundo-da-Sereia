@@ -2,18 +2,25 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jogadores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <h1>🧜‍♀️ Mundo da Sereia</h1>
+    <h1>
+        <span class="logo" data-sprite="sereia" data-scale="2"></span>
+        Mundo da Sereia
+    </h1>
 
     <nav>
-        <a href="index.html"> Jogadores</a>
-        <a href="jogo.html"> Jogar</a>
+        <a href="index.html">Jogadores</a>
+        <a href="jogo.html">Jogar</a>
     </nav>
 </header>
 
@@ -31,18 +38,20 @@
 
     <h2>Jogadores cadastrados</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Pontos</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
+    <div class="tabela-rolagem">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Pontos</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
 
-        <tbody id="lista"></tbody>
-    </table>
+            <tbody id="lista"></tbody>
+        </table>
+    </div>
 </div>
 
 <script src="script.js"></script>
