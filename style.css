@@ -276,6 +276,36 @@ td button {
     }
 }
 
+.baiacu {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: baiacu-flutua 3s ease-in-out infinite;
+}
+
+.baiacu1 {
+    left: 24%;
+    top: 120px;
+}
+
+.baiacu2 {
+    left: 72%;
+    top: 265px;
+    animation-delay: 1.5s;
+}
+
+@keyframes baiacu-flutua {
+    0%, 100% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+
 /* ===== BOLHAS ===== */
 
 .bolha {
